@@ -1,7 +1,7 @@
 using Eflatun.SceneReference;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SceneRefs", menuName = "WBTM/SceneRefs", order = 1)]
+[CreateAssetMenu(fileName = "SceneRefs", menuName = "WBTM/SceneRefs")]
 public class SceneRefs : ScriptableObject
 {
     [SerializeField]

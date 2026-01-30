@@ -1,7 +1,5 @@
-using Reflex.Attributes;
 using Reflex.Core;
-using Reflex.Extensions;
-using UnityEngine;
+using Reflex.Extensions; 
 using UnityEngine.SceneManagement;
 
 public class Ctx
