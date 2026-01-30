@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7979153904149607968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7844278831545216753}
+  - component: {fileID: 8957950473631093585}
+  - component: {fileID: 556459163150688345}
+  - component: {fileID: 6782363016498944689}
+  m_Layer: 0
+  m_Name: RootScope
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7844278831545216753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979153904149607968}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8957950473631093585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979153904149607968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5312032623c34414a54ea00e35a7eb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Reflex::Reflex.Core.ContainerScope
+--- !u!114 &556459163150688345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979153904149607968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364c6b8c717e6464b86091ef068a8d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoutingService
+  transition: {fileID: 11400000, guid: 013263c83b6a84c4d95beaa8bd163ac8, type: 2}
+  startDelay: 0
+--- !u!114 &6782363016498944689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979153904149607968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6bc6086b8b228a4f95baa7acd6457fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RootInstaller
+  _sceneRefs: {fileID: 11400000, guid: 2c02d5319a37e6647843b4545ccb5ccb, type: 2}
+  _routingService: {fileID: 556459163150688345}
+  _transitionManager: {fileID: 5577570278228321345, guid: 755dc74ac1dfe494a911d426f4a7cbb3, type: 3}
