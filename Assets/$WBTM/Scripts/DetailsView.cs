@@ -9,6 +9,11 @@ public class DetailsView : MonoBehaviour, IPointerClickHandler
     [SerializeField]
     private TextMeshProUGUI _contentText;
 
+    private void Awake()
+    {
+        HideDetails();
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         HideDetails();

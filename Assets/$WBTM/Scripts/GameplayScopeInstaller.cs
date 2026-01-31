@@ -16,5 +16,9 @@ public class GameplayScopeInstaller : MonoBehaviour, IInstaller
         //Hint Controller
         var hintController = FindFirstObjectByType<HintController>(FindObjectsInactive.Include);
         builder.RegisterValue(hintController);
+
+        //Zoom Controller
+        var zoomController = FindFirstObjectByType<ZoomController>(FindObjectsInactive.Include);
+        builder.RegisterValue(zoomController);
     }
 }
