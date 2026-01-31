@@ -1,28 +1,75 @@
+using Cysharp.Threading.Tasks;
+using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameplayStateController : MonoBehaviour
-{ 
-    private GameplayParametersModelSO _gameplayParameters => Ctx.Resolve<GameplayParametersModelSO>();
-    private EntitiesController _entitiesController => Ctx.Resolve<EntitiesController>();
+{
+    private EntitySubject _currentEntitySubject;
+    private int _entityCount;
 
-    public void DetermineWinOrLose()
+    private DialogView _dialogView => Ctx.Resolve<DialogView>();
+    private GameplayParametersModelSO _gameplayParameters => Ctx.Resolve<GameplayParametersModelSO>();
+    private EntityModelController _entitiesModelController => Ctx.Resolve<EntityModelController>();
+    private EntitySubjectController _entitySubjectController => Ctx.Resolve<EntitySubjectController>();
+    private RoutingService _routingService => Ctx.Resolve<RoutingService>();
+
+    private async void Start()
     {
-        _entitiesController.ProcessEntity();
-        if(_entitiesController.BadEntitiesInside >= _gameplayParameters.BadEntitiesToLose)
+        await _dialogView.HideDialog().ContinueWith(() =>
         {
-            Dbg.Log("LOSS");
-        }
-        else
-        {
-            Dbg.Log("WIN"); 
-        }
+            CallNextEntity();
+        });
     }
 
-    private void OnGUI()
+    void DetermineWhatNext()
     {
-        if (GUI.Button(new Rect(10, 150, 150, 50), "Check Win or Lose"))
+        _entityCount++; 
+        if (_entityCount >= _gameplayParameters.EntitiesPerLevel)
         {
             DetermineWinOrLose();
         }
+        else
+        { 
+            CallNextEntity();
+        }
+    }
+
+    public void DetermineWinOrLose()
+    {
+        _entitiesModelController.ProcessEntity();
+        EndingView.IsWin = _entitiesModelController.BadEntitiesInside < _gameplayParameters.BadEntitiesToLose; 
+        _routingService.LoadEndingScene();
+    }
+
+    public void CallNextEntity()
+    {
+        _currentEntitySubject = _entitySubjectController.SpawnEntity(() =>
+        {
+            _dialogView.ShowDialog();
+        });
+    }
+
+    public async void AllowEntityIn()
+    {
+        _entitiesModelController.AddEntity(_currentEntitySubject.EntityModelSO);
+        await _dialogView.HideDialog().ContinueWith(async () =>
+        {
+            await _currentEntitySubject.OnIn(() =>
+            {
+                DetermineWhatNext();
+            });
+        });
+    }
+
+    public async void LeaveEntityOut()
+    {
+        await _dialogView.HideDialog().ContinueWith(async () =>
+        {
+            await _currentEntitySubject.OnLeave(() =>
+            {
+                DetermineWhatNext();
+            });
+        });
     }
 }

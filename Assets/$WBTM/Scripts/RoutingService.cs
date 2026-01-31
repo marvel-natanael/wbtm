@@ -12,17 +12,17 @@ public class RoutingService : MonoBehaviour
     private SceneRefs _sceneRefs => Ctx.Resolve<SceneRefs>();
 
     public void LoadEndingScene()
-    {
-        TransitionManager.Instance().Transition(_sceneRefs.EndingScene.Path, transition, startDelay);
+    { 
+        TransitionManager.Instance().Transition(_sceneRefs.EndingScene.Name, transition, startDelay);
     }
 
     public void LoadGameScene()
     {
-        TransitionManager.Instance().Transition(_sceneRefs.GameScene.Path, transition, startDelay);
+        TransitionManager.Instance().Transition(_sceneRefs.GameScene.Name, transition, startDelay);
     }
 
     public void LoadMenuScene()
     {
-        TransitionManager.Instance().Transition(_sceneRefs.MenuScene.Path, transition, startDelay);
+        TransitionManager.Instance().Transition(_sceneRefs.MenuScene.Name, transition, startDelay);
     }
 }

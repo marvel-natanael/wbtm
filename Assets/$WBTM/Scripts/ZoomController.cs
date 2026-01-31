@@ -4,9 +4,16 @@ using System.Collections;
 
 public class ZoomController : MonoBehaviour
 {
-    [SerializeField] private CinemachineCamera virtualCamera;
-    [SerializeField] private float zoomedDistance = 5f;
-    [SerializeField] private float zoomDuration = 0.5f;
+    [SerializeField]
+    private Transform originalTarget;
+    [SerializeField]
+    private Vector3 originalOffset;
+    [SerializeField]
+    private CinemachineCamera virtualCamera;
+    [SerializeField]
+    private float zoomedDistance = 5f;
+    [SerializeField]
+    private float zoomDuration = 0.5f;
     [SerializeField] private float rotationSpeed = 3f;
 
     private float originalDistance;
@@ -27,6 +34,8 @@ public class ZoomController : MonoBehaviour
                 originalScreenX = framingTransposer.Composition.ScreenPosition.x;
                 originalScreenY = framingTransposer.Composition.ScreenPosition.y;
                 originalScreenPos = framingTransposer.Composition.ScreenPosition;
+                originalTarget = framingTransposer.FollowTarget;
+                originalOffset = framingTransposer.TargetOffset;
             }
         }
     }
@@ -42,10 +51,11 @@ public class ZoomController : MonoBehaviour
         }
     }
 
-    public void ZoomIn(Transform target)
+    public void ZoomIn(Transform target, Vector3 offset)
     {
         if (framingTransposer == null || isZoomed) return;
         virtualCamera.Target.TrackingTarget = target;
+        framingTransposer.TargetOffset = offset;
         StartCoroutine(ScaleDistanceTo(zoomedDistance, zoomDuration, false));
         isZoomed = true;
     }
@@ -53,6 +63,8 @@ public class ZoomController : MonoBehaviour
     public void ZoomOut()
     {
         if (framingTransposer == null || !isZoomed) return;
+        virtualCamera.Target.TrackingTarget = originalTarget;
+        framingTransposer.TargetOffset = originalOffset;
         StartCoroutine(ScaleDistanceTo(originalDistance, zoomDuration, true));
         isZoomed = false;
     }

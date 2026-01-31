@@ -27,8 +27,12 @@ public class GameplayScopeInstaller : MonoBehaviour, IInstaller
         //Gameplay Parameters
         builder.RegisterValue(_gameplayParameters);
 
-        //Entities Controller
-        var entitiesController = FindFirstObjectByType<EntitiesController>(FindObjectsInactive.Include);
-        builder.RegisterValue(entitiesController);
+        //Entity Model Controller
+        var entitiesModelController = FindFirstObjectByType<EntityModelController>(FindObjectsInactive.Include);
+        builder.RegisterValue(entitiesModelController);
+
+        //Entity Subject Controller
+        var entitySubjectController = FindFirstObjectByType<EntitySubjectController>(FindObjectsInactive.Include);
+        builder.RegisterValue(entitySubjectController);
     }
 }

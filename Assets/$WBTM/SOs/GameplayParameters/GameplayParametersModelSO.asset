@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: GameplayParametersModelSO
   m_EditorClassIdentifier: Assembly-CSharp::GameplayParametersModelSO
   _badEntitiesToLose: 3
+  _entitiesPerLevel: 3
