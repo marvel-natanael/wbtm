@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30ee1c36cad1fa5428890aadcdeb8b43, type: 3}
-  m_Name: SampleDialog
-  m_EditorClassIdentifier: Assembly-CSharp::DialogModelSO
-  _message: Nyawit nih orang
+  m_Script: {fileID: 11500000, guid: 7df3b96f77f36554691e7f04a75c8426, type: 3}
+  m_Name: HintModelSO
+  m_EditorClassIdentifier: Assembly-CSharp::HintModelSO
+  _description: 

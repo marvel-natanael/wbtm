@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b64afc806288242bd01f393a490b8b, type: 3}
   m_Name: EntityModelSO
   m_EditorClassIdentifier: Assembly-CSharp::EntityModelSO
+  _headDescription: {fileID: 11400000, guid: 9d14e062d5b5b0c4597c090fada6b4c3, type: 2}
+  _clothDescription: {fileID: 11400000, guid: e6237cd9597d7a44b8493ce86c383822, type: 2}
+  _voiceDescription: {fileID: 11400000, guid: da89f69ea479a104e99ce0f3eeb08bf3, type: 2}
   IsBad: 0

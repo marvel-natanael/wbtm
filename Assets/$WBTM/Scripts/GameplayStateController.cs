@@ -24,13 +24,13 @@ public class GameplayStateController : MonoBehaviour
 
     void DetermineWhatNext()
     {
-        _entityCount++; 
+        _entityCount++;
         if (_entityCount >= _gameplayParameters.EntitiesPerLevel)
         {
             DetermineWinOrLose();
         }
         else
-        { 
+        {
             CallNextEntity();
         }
     }
@@ -38,15 +38,18 @@ public class GameplayStateController : MonoBehaviour
     public void DetermineWinOrLose()
     {
         _entitiesModelController.ProcessEntity();
-        EndingView.IsWin = _entitiesModelController.BadEntitiesInside < _gameplayParameters.BadEntitiesToLose; 
+        EndingView.IsWin = _entitiesModelController.BadEntitiesInside < _gameplayParameters.BadEntitiesToLose;
         _routingService.LoadEndingScene();
     }
 
     public void CallNextEntity()
     {
-        _currentEntitySubject = _entitySubjectController.SpawnEntity(() =>
+        _currentEntitySubject = _entitySubjectController.SpawnEntity(async () =>
         {
-            _dialogView.ShowDialog();
+            await _dialogView.ShowDialog().ContinueWith(() =>
+             {
+                 _dialogView.UpdateDialogText(_currentEntitySubject.EntityModelSO.VoiceDescription);
+             });
         });
     }
 

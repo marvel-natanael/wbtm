@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3746775aae00d094da5db51fcc70d412, type: 3}
-  m_Name: HintDetails
-  m_EditorClassIdentifier: Assembly-CSharp::DetailsModelSO
-  _type: 3
-  _description: Petunjuk ni bos
+  m_Script: {fileID: 0}
+  m_Name: Cloth 2
+  m_EditorClassIdentifier: Assembly-CSharp::VisualDescriptionModelSO
+  _descriptions: []
+  _descriptionType: 1
+  _visualContent: {fileID: 21300000, guid: ad4e24543f7ed24449d3bf4bbbe208d2, type: 3}

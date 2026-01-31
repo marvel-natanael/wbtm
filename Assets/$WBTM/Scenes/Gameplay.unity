@@ -356,7 +356,7 @@ Transform:
   m_GameObject: {fileID: 233692589}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8624399, y: 1, z: -1.2}
+  m_LocalPosition: {x: 0.86217636, y: 1, z: -1.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -650,7 +650,7 @@ Transform:
   m_GameObject: {fileID: 760173504}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8624399, y: 1, z: -1.2}
+  m_LocalPosition: {x: 0.86217636, y: 1, z: -1.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -878,13 +878,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7318563534994326968, guid: 8d1339ae719865943bc74d83db1c30d0, type: 3}
+      propertyPath: m_text
+      value: Don't Let Them In!
+      objectReference: {fileID: 0}
     - target: {fileID: 8315064020778500723, guid: 8d1339ae719865943bc74d83db1c30d0, type: 3}
       propertyPath: m_SizeDelta.x
       value: 778.11304
       objectReference: {fileID: 0}
     - target: {fileID: 8315064020778500723, guid: 8d1339ae719865943bc74d83db1c30d0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 140.00003
+      value: 140
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1222,6 +1226,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4872613257412571252, guid: 9f84c9341fd68be4e9150bafed968d43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 23014363c2c1f4f408b793f3decc1a65, type: 3}
     - target: {fileID: 6832609241766431782, guid: 9f84c9341fd68be4e9150bafed968d43, type: 3}
       propertyPath: m_Camera
       value: 

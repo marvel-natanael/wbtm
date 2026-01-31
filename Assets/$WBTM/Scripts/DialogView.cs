@@ -25,12 +25,13 @@ public class DialogView : MonoBehaviour
 
     public async UniTask HideDialog()
     {
+        _dialogText.text = "";
         await _moveSubject.MoveUp();
     }
 
-    public void UpdateDialogText(DialogModelSO dialogModelSO)
+    public void UpdateDialogText(VerbalDescriptionModelSO descriptionModel)
     {
-        StartCoroutine(TypeText(dialogModelSO.Message));
+        StartCoroutine(TypeText(descriptionModel.VerbalContent));
     }
 
     private IEnumerator TypeText(string message)

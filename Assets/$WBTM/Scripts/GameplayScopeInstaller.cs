@@ -9,7 +9,7 @@ public class GameplayScopeInstaller : MonoBehaviour, IInstaller
     public void InstallBindings(ContainerBuilder builder)
     {
         //Details View
-        var detailsView = FindFirstObjectByType<DetailsView>(FindObjectsInactive.Include);
+        var detailsView = FindFirstObjectByType<HintView>(FindObjectsInactive.Include);
         builder.RegisterValue(detailsView);
 
         //Dialog View

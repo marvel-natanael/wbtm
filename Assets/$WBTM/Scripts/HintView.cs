@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DetailsView : MonoBehaviour, IPointerClickHandler
+public class HintView : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField]
     private TextMeshProUGUI _headerText;
@@ -19,9 +19,8 @@ public class DetailsView : MonoBehaviour, IPointerClickHandler
         HideDetails();
     }
 
-    public void ShowDetails(DetailsModelSO detailsModelSO)
+    public void ShowDetails(HintModelSO detailsModelSO)
     {
-        _headerText.text = detailsModelSO.Type;
         _contentText.text = detailsModelSO.Description;
         gameObject.SetActive(true);
     }

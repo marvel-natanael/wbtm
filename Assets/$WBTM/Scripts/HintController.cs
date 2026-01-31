@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class HintController : MonoBehaviour
 {
-    private DetailsView _detailView => Ctx.Resolve<DetailsView>();
+    private HintView _detailView => Ctx.Resolve<HintView>();
 
-    public void ShowHint(DetailsModelSO detailsModelSO)
+    public void ShowHint(HintModelSO detailsModelSO)
     {
         if (detailsModelSO != null)
         {
