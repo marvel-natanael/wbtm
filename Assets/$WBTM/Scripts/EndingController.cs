@@ -7,6 +7,7 @@ public class EndingController : MonoBehaviour
     private RoutingService _routingService => Ctx.Resolve<RoutingService>();
 
     public static int BadEntitesAmount;
+    public static bool GoodEntityLeft;
 
     private void Start()
     {
@@ -15,6 +16,12 @@ public class EndingController : MonoBehaviour
 
     public void ManageEndingView()
     {
+        if(GoodEntityLeft)
+        {
+            _endingView.ShowEnding2();
+            return;
+        }
+
         if (BadEntitesAmount == 0)
         {
             _endingView.ShowEnding1();
@@ -25,7 +32,7 @@ public class EndingController : MonoBehaviour
         }
         else
         {
-            _endingView.ShowEnding2();
+            _endingView.ShowEnding4();
         }
     }
 

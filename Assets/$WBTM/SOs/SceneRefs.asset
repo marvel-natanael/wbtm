@@ -18,6 +18,9 @@ MonoBehaviour:
   _gameScene:
     asset: {fileID: 102900000, guid: 05e2ec3ea2db2a24da0f4bd754843e4a, type: 3}
     guid: 05e2ec3ea2db2a24da0f4bd754843e4a
-  _EndingScene:
+  _endingScene:
     asset: {fileID: 102900000, guid: 2b89595422660fa439674dbab9b1cce6, type: 3}
     guid: 2b89595422660fa439674dbab9b1cce6
+  _tutorialScene:
+    asset: {fileID: 102900000, guid: 4f0c742aaacdb9c45a1f5ad7fb8cd479, type: 3}
+    guid: 4f0c742aaacdb9c45a1f5ad7fb8cd479

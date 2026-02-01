@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddf28c08dc23894490b4f20f1d38dcf, type: 3}
+  m_Name: Head 10
+  m_EditorClassIdentifier: Assembly-CSharp::VisualDescriptionModelSO
+  _descriptions:
+  - They appeared to be wearing a damaged pumpkin, covered in deep wrinkles.
+  - The pumpkin mask looked worn and unclean.
+  _descriptionType: 0
+  _visualContent: {fileID: 21300000, guid: f9b391a7940968847ac5441dbf066235, type: 3}

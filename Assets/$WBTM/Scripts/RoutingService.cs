@@ -25,4 +25,9 @@ public class RoutingService : MonoBehaviour
     {
         TransitionManager.Instance().Transition(_sceneRefs.MenuScene.Name, transition, startDelay);
     }
+
+    public void LoadTutorialScene()
+    {
+        TransitionManager.Instance().Transition(_sceneRefs.TutorialScene.Name, transition, startDelay);
+    }
 }

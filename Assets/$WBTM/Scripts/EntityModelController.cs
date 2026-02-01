@@ -29,7 +29,7 @@ public class EntityModelController : MonoBehaviour
                            {
                                HeadDescription = h,
                                ClothDescription = c,
-                               VoiceDescription = v, 
+                               VoiceDescription = v,
                            };
 
         var list = combinations.ToList();
@@ -49,8 +49,14 @@ public class EntityModelController : MonoBehaviour
         entities.Add(entity);
     }
 
+
+    public bool IsBadEntity(EntityModelSO entity)
+    {
+        return BadEntities.Contains(entity);
+    }
+
     public void ProcessEntity()
     {
         BadEntitiesInside = entities.Count(e => BadEntities.Any(b => b.HeadDescription == e.HeadDescription && b.ClothDescription == e.ClothDescription && b.VoiceDescription == e.VoiceDescription));
-    } 
+    }
 }

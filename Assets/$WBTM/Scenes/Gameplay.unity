@@ -590,7 +590,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3f6a58a30b2fc43927eb39cf0182e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameplayScopeInstaller
-  _gameplayParameters: {fileID: 11400000, guid: 4463958d2466f684b98dd8934a7c7a37, type: 2}
 --- !u!1 &657699116
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +741,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2192914}
+    - target: {fileID: 2769193928427734631, guid: 8d1339ae719865943bc74d83db1c30d0, type: 3}
+      propertyPath: _duration
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3243295018566839916, guid: 8d1339ae719865943bc74d83db1c30d0, type: 3}
       propertyPath: m_Name
       value: GameplayCanvas

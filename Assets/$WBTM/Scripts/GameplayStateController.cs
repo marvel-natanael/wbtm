@@ -75,6 +75,10 @@ public class GameplayStateController : MonoBehaviour
 
     public async void LeaveEntityOut()
     {
+        if (_entitiesModelController.IsBadEntity(_currentEntitySubject.EntityModelSO))
+        {
+            EndingController.GoodEntityLeft = true;
+        }
         await _dialogView.HideDialog().ContinueWith(async () =>
         {
             await _currentEntitySubject.OnLeave(() =>

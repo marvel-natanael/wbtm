@@ -20,6 +20,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 945046a3124a702459ca5f164c408a05, type: 2}
   - {fileID: 11400000, guid: 99b5b60760bcaba489e2f50510cbc7b7, type: 2}
   - {fileID: 11400000, guid: 1460b555265a3474db9b46c10972e147, type: 2}
+  - {fileID: 11400000, guid: e31c46ae22f019f49885f375ce741258, type: 2}
+  - {fileID: 11400000, guid: 2070b2dcd97318a46b9f257f63938e9c, type: 2}
+  - {fileID: 11400000, guid: d75850e989521be4aa752ea338622fca, type: 2}
+  - {fileID: 11400000, guid: e7da0db441caf1748a57ef704fd52c7a, type: 2}
+  - {fileID: 11400000, guid: c307b71ec3b7b5142b3df54f71c31974, type: 2}
+  - {fileID: 11400000, guid: 97b9c8c15d4de1649bfad7a08fa9b1c9, type: 2}
+  - {fileID: 11400000, guid: 8a0f8e42a9f98e544bfaeb4357b8a4ed, type: 2}
+  - {fileID: 11400000, guid: c706863c3472cc6429043ba5419047ea, type: 2}
+  - {fileID: 11400000, guid: eb35c684c0dc550428a8e2bc1d1773e8, type: 2}
+  - {fileID: 11400000, guid: eb73147ed7eb79e4fb20724b23efdaa4, type: 2}
+  - {fileID: 11400000, guid: d94b5a64144026748a95d476f0200dff, type: 2}
+  - {fileID: 11400000, guid: bc9bc98472b75044faed3776a4332916, type: 2}
   _clothCollection:
   - {fileID: 11400000, guid: e6237cd9597d7a44b8493ce86c383822, type: 2}
   - {fileID: 11400000, guid: 9bede6161da14d54b803e77e4513227d, type: 2}
