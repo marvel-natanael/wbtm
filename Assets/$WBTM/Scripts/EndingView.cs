@@ -3,20 +3,31 @@ using UnityEngine;
 public class EndingView : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _winText;
+    private GameObject _ending1;
     [SerializeField]
-    private GameObject _loseText;
+    private GameObject _ending2;
+    [SerializeField]
+    private GameObject _ending3;
 
-    public static bool IsWin;
-
-    private void OnEnable()
+    private void Awake()
     {
-        ManageEndingView();
+        _ending1.SetActive(false);
+        _ending2.SetActive(false);
+        _ending3.SetActive(false);
     }
 
-    public void ManageEndingView()
+    public void ShowEnding1()
     {
-        _winText.SetActive(IsWin);
-        _loseText.SetActive(!IsWin);
+        _ending1.SetActive(true);
+    }
+
+    public void ShowEnding2()
+    {
+        _ending2.SetActive(true);
+    }
+
+    public void ShowEnding3()
+    {
+        _ending3.SetActive(true);
     }
 }

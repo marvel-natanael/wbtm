@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: VerbalDescriptionModelSO
+  m_Script: {fileID: 11500000, guid: 88c649b276f8eb243ad0b02d1e2136e6, type: 3}
+  m_Name: Dialog 2
   m_EditorClassIdentifier: Assembly-CSharp::VerbalDescriptionModelSO
   _descriptions:
-  - They spoke fluently.
-  - 'People could understand them easily. '
-  - 'There was nothing unusual about the way they talked.. '
+  - The way they spoke felt strange.
+  - "They used words that didn\u2019t quite fit."
+  - At times, they repeated themselves.
   _descriptionType: 2
-  _verbalContent: The password is vitrum occultum
+  _verbalContent: The password is Vitrum Occultum

@@ -10,10 +10,10 @@ public class EntitySubjectController : MonoBehaviour
     [SerializeField]
     private Transform _destination;
 
-    public EntitySubject SpawnEntity(Action onFinish)
+    public EntitySubject SpawnEntity(EntityModelSO entityModelSO, Action onFinish)
     {
         EntitySubject entity = Instantiate(_entity, transform.position, Quaternion.identity, _entityParent);
-        entity.OnSpawn(_destination, onFinish);
+        entity.OnSpawn(entityModelSO, _destination, onFinish);
         return entity;
     }
 }

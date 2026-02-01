@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163a28ac092c8a94d89d5abfb11a5416, type: 3}
+  m_Name: EnitityModelCollection
+  m_EditorClassIdentifier: Assembly-CSharp::EnitityModelCollection
+  _headCollection:
+  - {fileID: 11400000, guid: 9d14e062d5b5b0c4597c090fada6b4c3, type: 2}
+  - {fileID: 11400000, guid: 7fa439da7150d6c45bc5f778ac271c43, type: 2}
+  - {fileID: 11400000, guid: 5377c078ef8f043479ffc958a67d6702, type: 2}
+  - {fileID: 11400000, guid: 47ae40384b6e8fe42b7f21efdb25feb3, type: 2}
+  - {fileID: 11400000, guid: 945046a3124a702459ca5f164c408a05, type: 2}
+  - {fileID: 11400000, guid: 99b5b60760bcaba489e2f50510cbc7b7, type: 2}
+  - {fileID: 11400000, guid: 1460b555265a3474db9b46c10972e147, type: 2}
+  _clothCollection:
+  - {fileID: 11400000, guid: e6237cd9597d7a44b8493ce86c383822, type: 2}
+  - {fileID: 11400000, guid: 9bede6161da14d54b803e77e4513227d, type: 2}
+  - {fileID: 11400000, guid: 0dcbc7e3495404f4cbcfc7299f195915, type: 2}
+  - {fileID: 11400000, guid: 8cd2acea456553d4a96f4aa28bd4d0c5, type: 2}
+  - {fileID: 11400000, guid: df67909ff78249f48b07f9eb1c319171, type: 2}
+  - {fileID: 11400000, guid: 02f3f0fdb531f4242a7e74266a5c52e1, type: 2}
+  _dialogCollection:
+  - {fileID: 11400000, guid: da89f69ea479a104e99ce0f3eeb08bf3, type: 2}
+  - {fileID: 11400000, guid: 1827d33ab630a0e4683378c0c5bc0cf5, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Head 2
   m_EditorClassIdentifier: Assembly-CSharp::VisualDescriptionModelSO
   _descriptions:
-  - The brown mask looked clean, but there were faint bloodstains on it.
-  - 'Traces of dried blood could still be seen on the brown mask. '
+  - The mask had an uneven eye design.
+  - 'The misaligned eyes on the square mask felt strange.       '
   _descriptionType: 0
-  _visualContent: {fileID: 21300000, guid: 017a17d219beda74ca7bd59828080e2a, type: 3}
+  _visualContent: {fileID: 21300000, guid: 9c6fd3349ed0ed341b15793437219443, type: 3}

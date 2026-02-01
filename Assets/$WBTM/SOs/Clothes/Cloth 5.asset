@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ddf28c08dc23894490b4f20f1d38dcf, type: 3}
-  m_Name: Head 1
+  m_Name: Cloth 5
   m_EditorClassIdentifier: Assembly-CSharp::VisualDescriptionModelSO
   _descriptions:
-  - The brown mask looked clean, but there were faint bloodstains on it.
-  - 'Traces of dried blood could still be seen on the brown mask. '
-  _descriptionType: 0
-  _visualContent: {fileID: 21300000, guid: 4e6ddea933d78ff4192b6801834c8096, type: 3}
+  - They were wearing a fine red cloak.
+  - A well-crafted cloak in a bright red color.
+  _descriptionType: 1
+  _visualContent: {fileID: 21300000, guid: db6c1e7e14864384cb05e5bc02d0d2cd, type: 3}

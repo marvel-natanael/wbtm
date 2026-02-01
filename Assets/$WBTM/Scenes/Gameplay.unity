@@ -750,10 +750,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 778.11304
       objectReference: {fileID: 0}
-    - target: {fileID: 3394659726622939840, guid: 8d1339ae719865943bc74d83db1c30d0, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 140
-      objectReference: {fileID: 0}
     - target: {fileID: 4062067681195100405, guid: 8d1339ae719865943bc74d83db1c30d0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -858,6 +854,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6393246311767458151, guid: 8d1339ae719865943bc74d83db1c30d0, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 7216480372823396422, guid: 8d1339ae719865943bc74d83db1c30d0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -878,17 +878,9 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7318563534994326968, guid: 8d1339ae719865943bc74d83db1c30d0, type: 3}
-      propertyPath: m_text
-      value: Don't Let Them In!
-      objectReference: {fileID: 0}
     - target: {fileID: 8315064020778500723, guid: 8d1339ae719865943bc74d83db1c30d0, type: 3}
       propertyPath: m_SizeDelta.x
       value: 778.11304
-      objectReference: {fileID: 0}
-    - target: {fileID: 8315064020778500723, guid: 8d1339ae719865943bc74d83db1c30d0, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 140
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

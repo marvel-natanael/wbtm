@@ -8,6 +8,8 @@ public class RootInstaller : MonoBehaviour, IInstaller
     private SceneRefs _sceneRefs;
     [SerializeField]
     private RoutingService _routingService; 
+    [SerializeField]
+    private EntityModelCollection _entityModelCollection; 
 
     public void InstallBindings(ContainerBuilder builder)
     {
@@ -16,5 +18,8 @@ public class RootInstaller : MonoBehaviour, IInstaller
 
         //Routing Service
         builder.RegisterValue(_routingService); 
+        
+        //Entity Model Collection
+        builder.RegisterValue(_entityModelCollection);
     }
 }

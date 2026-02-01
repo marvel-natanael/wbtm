@@ -37,6 +37,12 @@ public class MoveSubject : MonoBehaviour
         await Move(Vector3.down);
     }
 
+    public async UniTask MoveTo(Vector3 destination)
+    {
+        Vector3 startPos = transform.position;
+        await Tween.Position(transform, destination, _duration);
+    }
+
     public async UniTask MoveTo(Transform destination)
     {
         await Tween.Position(transform, destination.position, _duration);

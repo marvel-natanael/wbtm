@@ -2,16 +2,23 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EntitySubject : MonoBehaviour
 {
     [SerializeField]
-    private EntityModelSO _entityModelSO;
+    private SpriteRenderer _headImage;
+    [SerializeField]
+    private SpriteRenderer _clothImage;
 
+    private EntityModelSO _entityModelSO;
     private MoveSubject _moveSubject;
     private WiggleSubject _wiggleSubject;
 
-    public EntityModelSO EntityModelSO => _entityModelSO;
+    public EntityModelSO EntityModelSO
+    {
+        get => _entityModelSO;  
+    }
 
     private void Awake()
     {
@@ -19,8 +26,12 @@ public class EntitySubject : MonoBehaviour
         _wiggleSubject = GetComponent<WiggleSubject>();
     }
 
-    public async UniTask OnSpawn(Transform destination, Action onFinish)
+    public async UniTask OnSpawn(EntityModelSO entityModelSO, Transform destination, Action onFinish)
     {
+        _entityModelSO = entityModelSO;
+        _headImage.sprite = entityModelSO.HeadDescription.VisualContent;
+        _clothImage.sprite = entityModelSO.ClothDescription.VisualContent;
+
         _wiggleSubject.SetWiggle(true);
         await _moveSubject.MoveTo(destination).ContinueWith(() =>
         {
