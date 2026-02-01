@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 2, y: -34}
-  m_SizeDelta: {x: 586.036, y: 130.534}
+  m_SizeDelta: {x: 1000, y: 130.534}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8453264286910782635
 CanvasRenderer:
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bad Person Warning
+  m_text: Don't Let Them In!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cdff9b04cf958674e9ade8083325480a, type: 2}
   m_sharedMaterial: {fileID: 5670553246290144316, guid: cdff9b04cf958674e9ade8083325480a, type: 2}
@@ -261,10 +261,10 @@ MonoBehaviour:
       - m_Target: {fileID: 8906333405615271404}
         m_TargetAssemblyTypeName: HintController, Assembly-CSharp
         m_MethodName: ShowHint
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: fbaaefb71485ec04f856ec4d994ca4bb, type: 2}
-          m_ObjectArgumentAssemblyTypeName: DetailsModelSO, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -317,7 +317,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 27, y: -243}
-  m_SizeDelta: {x: 989.108, y: 499.232}
+  m_SizeDelta: {x: 1200, y: 499.232}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1286908230542285318
 CanvasRenderer:
@@ -798,6 +798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DetailsView
   _headerText: {fileID: 7318563534994326968}
   _contentText: {fileID: 6393246311767458151}
+  _header: Dont Let Them In!
 --- !u!1 &3952232774617473870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,7 +1303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 230930532593148756, guid: 775aca5866add4341a3f349696ec531f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 140.00003
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 843781324818202816, guid: 775aca5866add4341a3f349696ec531f, type: 3}
       propertyPath: dialogueText

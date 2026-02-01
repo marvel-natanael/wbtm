@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df13e324c4dd54b42b93cb9e417200a4, type: 3}
   m_Name: GameplayParametersModelSO
   m_EditorClassIdentifier: Assembly-CSharp::GameplayParametersModelSO
-  _badEntitiesToLose: 3
-  _entitiesPerLevel: 3
+  _badEntitiesToLose: 5
+  _entitiesPerLevel: 10

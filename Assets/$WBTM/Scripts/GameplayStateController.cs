@@ -13,9 +13,12 @@ public class GameplayStateController : MonoBehaviour
     private EntityModelController _entitiesModelController => Ctx.Resolve<EntityModelController>();
     private EntitySubjectController _entitySubjectController => Ctx.Resolve<EntitySubjectController>();
     private RoutingService _routingService => Ctx.Resolve<RoutingService>();
+    private HintController _hintController => Ctx.Resolve<HintController>();
 
     private async void Start()
     {
+        _entitiesModelController.GetPossibleEntities(_gameplayParameters.EntitiesPerLevel, _gameplayParameters.BadEntitiesToLose);
+        _hintController.SetHintModel(_entitiesModelController.BadEntities);
         await _dialogView.HideDialog().ContinueWith(() =>
         {
             CallNextEntity();
@@ -38,13 +41,14 @@ public class GameplayStateController : MonoBehaviour
     public void DetermineWinOrLose()
     {
         _entitiesModelController.ProcessEntity();
-        EndingView.IsWin = _entitiesModelController.BadEntitiesInside < _gameplayParameters.BadEntitiesToLose;
+        EndingController.BadEntitesAmount = _entitiesModelController.BadEntitiesInside;
         _routingService.LoadEndingScene();
     }
 
     public void CallNextEntity()
     {
-        _currentEntitySubject = _entitySubjectController.SpawnEntity(async () =>
+        _currentEntitySubject = _entitySubjectController.SpawnEntity(_entitiesModelController.PossibleEntities[_entityCount],
+            async () =>
         {
             await _dialogView.ShowDialog().ContinueWith(() =>
              {

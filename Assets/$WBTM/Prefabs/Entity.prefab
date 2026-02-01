@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoomSubject
   _zoomInOffset: {x: 0, y: 0, z: 0}
-  _zoomOutOffset: {x: 0, y: 0.5, z: 0}
 --- !u!65 &7095526147131590446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -147,7 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c71d47fc5ba2a499098ab8fd0a3297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntitySubject
-  _entityModelSO: {fileID: 11400000, guid: a9f4cd0208dfddf4cb83a98606d22102, type: 2}
+  _headImage: {fileID: 7569238559186880375}
+  _clothImage: {fileID: 7806434331280381663}
 --- !u!1 &6944073658723932356
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,7 +285,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoomSubject
   _zoomInOffset: {x: 0, y: 0, z: 0}
-  _zoomOutOffset: {x: 0, y: 0.5, z: 0}
 --- !u!65 &4430252712304062626
 BoxCollider:
   m_ObjectHideFlags: 0
