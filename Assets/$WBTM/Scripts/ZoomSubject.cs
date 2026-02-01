@@ -10,11 +10,13 @@ public class ZoomSubject : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (HintView.Active) return;
         _zoomController.ZoomIn(transform, _zoomInOffset);
     }
 
     private void OnMouseUp()
     {
+        if (HintView.Active) return;
         _zoomController.ZoomOut();
     }
 }

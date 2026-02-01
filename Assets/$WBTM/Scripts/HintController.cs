@@ -18,9 +18,9 @@ public class HintController : MonoBehaviour
         string description = string.Empty;
         foreach (var entity in badEntities)
         {
-            description += "\n" + entity.HeadDescription.Description + "\n\n";
-            description += entity.ClothDescription.Description + "\n\n";
-            description += entity.VoiceDescription.Description + "\n\n";
+            description += "\n" + entity.HeadDescription.Description + " ";
+            description += entity.ClothDescription.Description + " ";
+            description += entity.VoiceDescription.Description;
             _hintModelSO.Hints.Add(description);
             description = string.Empty;
         }

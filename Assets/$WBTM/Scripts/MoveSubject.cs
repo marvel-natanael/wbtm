@@ -3,9 +3,7 @@ using PrimeTween;
 using Cysharp.Threading.Tasks;
 
 public class MoveSubject : MonoBehaviour
-{
-    [SerializeField]
-    private float _delay = 1f;
+{ 
     [SerializeField]
     private float _distance = 5f;
     [SerializeField]

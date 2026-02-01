@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class HintView : MonoBehaviour, IPointerClickHandler
+public class HintView : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI _headerText;
@@ -13,23 +13,32 @@ public class HintView : MonoBehaviour, IPointerClickHandler
     private string _header;
     private HintModelSO _hintModel;
 
-    public HintModelSO HintModel { get => _hintModel; set { _hintModel = value; _selectedIndex = 0; } }
     private int _selectedIndex = 0;
+
+    public static bool Active;
+    public HintModelSO HintModel { get => _hintModel; set { _hintModel = value; _selectedIndex = 0; } }
+
 
     private void Awake()
     {
         HideHint();
     }
-
-    public void OnPointerClick(PointerEventData eventData)
+    public void NextHint()
     {
         _selectedIndex++;
         ScrollHint();
     }
 
+    public void PreviousHint()
+    {
+        _selectedIndex--;
+        ScrollHint();
+
+    }
+
     public void ScrollHint()
     {
-        if (_selectedIndex >= _hintModel.Hints.Count)
+        if (_selectedIndex < 0 || _selectedIndex >= _hintModel.Hints.Count)
         {
             HideHint();
         }
@@ -44,6 +53,7 @@ public class HintView : MonoBehaviour, IPointerClickHandler
         _headerText.text = _header + " #" + (_selectedIndex + 1).ToString();
         _contentText.text = _hintModel.Hints[_selectedIndex];
         gameObject.SetActive(true);
+        Active = true;
     }
 
     public void HideHint()
@@ -51,5 +61,6 @@ public class HintView : MonoBehaviour, IPointerClickHandler
         _selectedIndex = 0;
         _contentText.text = string.Empty;
         gameObject.SetActive(false);
+        Active = false;
     }
 }
