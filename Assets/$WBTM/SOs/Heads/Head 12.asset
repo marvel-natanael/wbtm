@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VisualDescriptionModelSO
   _descriptions:
   - They wore a pumpkin mask without a stem.
-  - The mask was stained with blood, and the eyes and mouth seemed reversed.
+  - 'The pumpkin mask was stained with blood, and the eyes and mouth seemed reversed. '
   _descriptionType: 0
   _visualContent: {fileID: 21300000, guid: 1e6f7171ef781554f8b6ea3f7a537796, type: 3}

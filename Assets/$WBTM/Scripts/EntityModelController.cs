@@ -46,7 +46,7 @@ public class EntityModelController : MonoBehaviour
 
     public void AddEntity(EntityModelSO entity)
     {
-        entities.Add(entity);
+        entities.Add(entity); 
     }
 
 

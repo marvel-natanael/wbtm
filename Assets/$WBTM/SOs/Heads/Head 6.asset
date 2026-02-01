@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VisualDescriptionModelSO
   _descriptions:
   - The smile on the mask looked as if it had been painted with blood.
-  - Both the eyes and the smile resembled blood.
+  - 'Both the eyes and the smile in the square mask resembled blood. '
   _descriptionType: 0
   _visualContent: {fileID: 21300000, guid: b2fa8abcf61235548bba3c16036d138d, type: 3}

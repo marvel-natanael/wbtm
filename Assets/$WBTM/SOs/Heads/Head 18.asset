@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Head 18
   m_EditorClassIdentifier: Assembly-CSharp::VisualDescriptionModelSO
   _descriptions:
-  - It looked as if the mask had been used to eat fresh meat.
+  - 'It looked as if the owl mask had been used to eat fresh meat. '
   - With its beak, the owl mask appeared to be enjoying fresh flesh.
   _descriptionType: 0
   _visualContent: {fileID: 21300000, guid: 488512f1f1efcb14780d7ad1072f1034, type: 3}

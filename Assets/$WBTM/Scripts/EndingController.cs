@@ -16,7 +16,7 @@ public class EndingController : MonoBehaviour
 
     public void ManageEndingView()
     {
-        if(GoodEntityLeft)
+        if (GoodEntityLeft)
         {
             _endingView.ShowEnding2();
             return;
@@ -28,11 +28,11 @@ public class EndingController : MonoBehaviour
         }
         else if (BadEntitesAmount >= _gameplayParams.BadEntitiesToLose)
         {
-            _endingView.ShowEnding3();
+            _endingView.ShowEnding4();
         }
         else
         {
-            _endingView.ShowEnding4();
+            _endingView.ShowEnding3();
         }
     }
 

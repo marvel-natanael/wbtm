@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::VisualDescriptionModelSO
   _descriptions:
   - "The pumpkin appeared clean at first glance, but it wasn\u2019t."
-  - There seemed to be drops of blood on its surface.
+  - 'There seemed to be drops of blood on its pumpkin surface. '
   _descriptionType: 0
   _visualContent: {fileID: 21300000, guid: a0d4a33fd6602db4fae6c8fbb166cd38, type: 3}

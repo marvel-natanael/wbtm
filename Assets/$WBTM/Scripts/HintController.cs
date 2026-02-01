@@ -13,6 +13,7 @@ public class HintController : MonoBehaviour
     {
         if (badEntities == null) return;
         string description = string.Empty;
+        _hintModelSO.Hints.Clear(); 
         foreach (var entity in badEntities)
         {
             description += "\n" + entity.HeadDescription.Description + " ";

@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class GameplayStateController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameplayStateController : MonoBehaviour
 
     private async void Start()
     {
+        EndingController.GoodEntityLeft = false;
         _visitorCountView.UpdateText(_entityCount, _gameplayParameters.EntitiesPerLevel);
         _entitiesModelController.GetPossibleEntities(_gameplayParameters.EntitiesPerLevel, _gameplayParameters.BadEntitiesToLose);
 
@@ -78,7 +80,7 @@ public class GameplayStateController : MonoBehaviour
         if (!_entitiesModelController.IsBadEntity(_currentEntitySubject.EntityModelSO))
         {
             EndingController.GoodEntityLeft = true;
-        }
+        } 
         await _dialogView.HideDialog().ContinueWith(async () =>
         {
             await _currentEntitySubject.OnLeave(() =>
