@@ -14,9 +14,12 @@ public class GameplayStateController : MonoBehaviour
     private EntitySubjectController _entitySubjectController => Ctx.Resolve<EntitySubjectController>();
     private RoutingService _routingService => Ctx.Resolve<RoutingService>();
     private HintController _hintController => Ctx.Resolve<HintController>();
+    private VisitorCountView _visitorCountView => Ctx.Resolve<VisitorCountView>();
 
     private async void Start()
     {
+        _visitorCountView.UpdateText(_entityCount, _gameplayParameters.EntitiesPerLevel);
+
         _entitiesModelController.GetPossibleEntities(_gameplayParameters.EntitiesPerLevel, _gameplayParameters.BadEntitiesToLose);
         _hintController.SetHintModel(_entitiesModelController.BadEntities);
         await _dialogView.HideDialog().ContinueWith(() =>
@@ -47,6 +50,7 @@ public class GameplayStateController : MonoBehaviour
 
     public void CallNextEntity()
     {
+        _visitorCountView.UpdateText(_entityCount, _gameplayParameters.EntitiesPerLevel);
         _currentEntitySubject = _entitySubjectController.SpawnEntity(_entitiesModelController.PossibleEntities[_entityCount],
             async () =>
         {

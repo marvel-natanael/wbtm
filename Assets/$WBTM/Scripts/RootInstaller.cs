@@ -10,6 +10,8 @@ public class RootInstaller : MonoBehaviour, IInstaller
     private RoutingService _routingService; 
     [SerializeField]
     private EntityModelCollection _entityModelCollection; 
+    [SerializeField]
+    private GameplayParametersModelSO _gameplayParameters;
 
     public void InstallBindings(ContainerBuilder builder)
     {
@@ -21,5 +23,8 @@ public class RootInstaller : MonoBehaviour, IInstaller
         
         //Entity Model Collection
         builder.RegisterValue(_entityModelCollection);
+
+        //Gameplay Parameters
+        builder.RegisterValue(_gameplayParameters);
     }
 }

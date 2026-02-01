@@ -8,7 +8,7 @@ public class EndingController : MonoBehaviour
 
     public static int BadEntitesAmount;
 
-    private void OnEnable()
+    private void Start()
     {
         ManageEndingView();
     }
@@ -19,13 +19,13 @@ public class EndingController : MonoBehaviour
         {
             _endingView.ShowEnding1();
         }
-        else if (BadEntitesAmount > 0 && BadEntitesAmount < _gameplayParams.BadEntitiesToLose)
+        else if (BadEntitesAmount >= _gameplayParams.BadEntitiesToLose)
         {
-            _endingView.ShowEnding2();
+            _endingView.ShowEnding3();
         }
         else
         {
-            _endingView.ShowEnding3();
+            _endingView.ShowEnding2();
         }
     }
 

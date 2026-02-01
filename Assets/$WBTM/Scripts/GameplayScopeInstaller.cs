@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class GameplayScopeInstaller : MonoBehaviour, IInstaller
 {
-    [SerializeField]
-    private GameplayParametersModelSO _gameplayParameters;
 
     public void InstallBindings(ContainerBuilder builder)
     {
@@ -24,9 +22,6 @@ public class GameplayScopeInstaller : MonoBehaviour, IInstaller
         var zoomController = FindFirstObjectByType<ZoomController>(FindObjectsInactive.Include);
         builder.RegisterValue(zoomController);
 
-        //Gameplay Parameters
-        builder.RegisterValue(_gameplayParameters);
-
         //Entity Model Controller
         var entitiesModelController = FindFirstObjectByType<EntityModelController>(FindObjectsInactive.Include);
         builder.RegisterValue(entitiesModelController);
@@ -34,5 +29,9 @@ public class GameplayScopeInstaller : MonoBehaviour, IInstaller
         //Entity Subject Controller
         var entitySubjectController = FindFirstObjectByType<EntitySubjectController>(FindObjectsInactive.Include);
         builder.RegisterValue(entitySubjectController);
+
+        //Visitor Count View
+        var visitorCountView = FindFirstObjectByType<VisitorCountView>(FindObjectsInactive.Include);
+        builder.RegisterValue(visitorCountView);
     }
 }
