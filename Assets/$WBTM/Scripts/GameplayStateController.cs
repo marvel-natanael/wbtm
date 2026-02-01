@@ -19,11 +19,11 @@ public class GameplayStateController : MonoBehaviour
     private async void Start()
     {
         _visitorCountView.UpdateText(_entityCount, _gameplayParameters.EntitiesPerLevel);
-
         _entitiesModelController.GetPossibleEntities(_gameplayParameters.EntitiesPerLevel, _gameplayParameters.BadEntitiesToLose);
-        _hintController.SetHintModel(_entitiesModelController.BadEntities);
+
         await _dialogView.HideDialog().ContinueWith(() =>
         {
+            _hintController.SetHintModel(_entitiesModelController.BadEntities);
             CallNextEntity();
         });
     }

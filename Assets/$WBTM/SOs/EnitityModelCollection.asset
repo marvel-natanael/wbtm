@@ -33,7 +33,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d94b5a64144026748a95d476f0200dff, type: 2}
   - {fileID: 11400000, guid: bc9bc98472b75044faed3776a4332916, type: 2}
   _clothCollection:
-  - {fileID: 11400000, guid: e6237cd9597d7a44b8493ce86c383822, type: 2}
+  - {fileID: 11400000, guid: 9098866559c4c00459d443f8e9eb40d8, type: 2}
   - {fileID: 11400000, guid: 9bede6161da14d54b803e77e4513227d, type: 2}
   - {fileID: 11400000, guid: 0dcbc7e3495404f4cbcfc7299f195915, type: 2}
   - {fileID: 11400000, guid: 8cd2acea456553d4a96f4aa28bd4d0c5, type: 2}

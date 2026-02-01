@@ -941,7 +941,6 @@ GameObject:
   - component: {fileID: 1662534544}
   - component: {fileID: 1662534543}
   - component: {fileID: 1662534542}
-  - component: {fileID: 1662534545}
   m_Layer: 5
   m_Name: TutorialCanvas
   m_TagString: Untagged
@@ -1032,22 +1031,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
---- !u!114 &1662534545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662534540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4731847934229f428a787a639d6e6f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EndingView
-  _ending1: {fileID: 0}
-  _ending2: {fileID: 0}
-  _ending3: {fileID: 0}
-  _ending4: {fileID: 0}
 --- !u!1 &1684238537
 GameObject:
   m_ObjectHideFlags: 0

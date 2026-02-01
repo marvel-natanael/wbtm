@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class HintController : MonoBehaviour
 {
+    [SerializeField]
     private HintModelSO _hintModelSO;
 
     private HintView _hintView => Ctx.Resolve<HintView>();
@@ -10,11 +11,7 @@ public class HintController : MonoBehaviour
 
     public void SetHintModel(List<EntityModelSO> badEntities)
     {
-        if (_hintModelSO == null)
-        {
-            _hintModelSO = ScriptableObject.CreateInstance<HintModelSO>();
-        }
-
+        if (badEntities == null) return;
         string description = string.Empty;
         foreach (var entity in badEntities)
         {
