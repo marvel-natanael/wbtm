@@ -289,8 +289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.9192, y: -99}
-  m_SizeDelta: {x: 955.4656, y: 425}
+  m_AnchoredPosition: {x: 20.9192, y: -90.12427}
+  m_SizeDelta: {x: 955.4656, y: 442.7515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496798071
 MonoBehaviour:
@@ -312,9 +312,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Ten guests will arrive.\r\n- You must identify the dangerous killer.\r\n-
+  m_text: "- Ten guests will arrive.\r\n- You must identify the dangerous killers.\r\n-
     Check your notes to learn the killer\u2019s traits.\r\n- Do not let the killer
-    enter the party.\r\n- Do not turn away real party members.\r\nGood luck!"
+    enter the party.\r\n- Do not turn away real party members.\n- You can inspect
+    details by clicking on a guest to zoom in.\r\n\r\nGood luck!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cdff9b04cf958674e9ade8083325480a, type: 2}
   m_sharedMaterial: {fileID: 5670553246290144316, guid: cdff9b04cf958674e9ade8083325480a, type: 2}
@@ -341,8 +342,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28.36
+  m_fontSizeBase: 28.36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

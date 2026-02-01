@@ -75,7 +75,7 @@ public class GameplayStateController : MonoBehaviour
 
     public async void LeaveEntityOut()
     {
-        if (_entitiesModelController.IsBadEntity(_currentEntitySubject.EntityModelSO))
+        if (!_entitiesModelController.IsBadEntity(_currentEntitySubject.EntityModelSO))
         {
             EndingController.GoodEntityLeft = true;
         }
