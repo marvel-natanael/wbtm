@@ -1,6 +1,4 @@
-using Cysharp.Threading.Tasks;
-using System.Threading.Tasks;
-using Unity.VisualScripting;
+using Cysharp.Threading.Tasks; 
 using UnityEngine;
 using static UnityEngine.EventSystems.EventTrigger;
 
@@ -9,23 +7,66 @@ public class GameplayStateController : MonoBehaviour
     private EntitySubject _currentEntitySubject;
     private int _entityCount;
 
-    private DialogView _dialogView => Ctx.Resolve<DialogView>();
-    private GameplayParametersModelSO _gameplayParameters => Ctx.Resolve<GameplayParametersModelSO>();
-    private EntityModelController _entitiesModelController => Ctx.Resolve<EntityModelController>();
-    private EntitySubjectController _entitySubjectController => Ctx.Resolve<EntitySubjectController>();
-    private RoutingService _routingService => Ctx.Resolve<RoutingService>();
-    private HintController _hintController => Ctx.Resolve<HintController>();
-    private VisitorCountView _visitorCountView => Ctx.Resolve<VisitorCountView>();
+    private DialogView _dialogView;
+    private GameplayParametersModelSO _gameplayParameters;
+    private EntityModelController _entitiesModelController;
+    private EntitySubjectController _entitySubjectController;
+    private RoutingService _routingService;
+    private HintController _hintController;
+    private VisitorCountView _visitorCountView;
+
+    private DialogView DialogView {
+        get {
+            if (_dialogView == null) _dialogView = Ctx.Resolve<DialogView>();
+            return _dialogView;
+        }
+    }
+    private GameplayParametersModelSO GameplayParameters {
+        get {
+            if (_gameplayParameters == null) _gameplayParameters = Ctx.Resolve<GameplayParametersModelSO>();
+            return _gameplayParameters;
+        }
+    }
+    private EntityModelController EntitiesModelController {
+        get {
+            if (_entitiesModelController == null) _entitiesModelController = Ctx.Resolve<EntityModelController>();
+            return _entitiesModelController;
+        }
+    }
+    private EntitySubjectController EntitySubjectController {
+        get {
+            if (_entitySubjectController == null) _entitySubjectController = Ctx.Resolve<EntitySubjectController>();
+            return _entitySubjectController;
+        }
+    }
+    private RoutingService RoutingService {
+        get {
+            if (_routingService == null) _routingService = Ctx.Resolve<RoutingService>();
+            return _routingService;
+        }
+    }
+    private HintController HintController {
+        get {
+            if (_hintController == null) _hintController = Ctx.Resolve<HintController>();
+            return _hintController;
+        }
+    }
+    private VisitorCountView VisitorCountView {
+        get {
+            if (_visitorCountView == null) _visitorCountView = Ctx.Resolve<VisitorCountView>();
+            return _visitorCountView;
+        }
+    }
 
     private async void Start()
     {
         EndingController.GoodEntityLeft = false;
-        _visitorCountView.UpdateText(_entityCount, _gameplayParameters.EntitiesPerLevel);
-        _entitiesModelController.GetPossibleEntities(_gameplayParameters.EntitiesPerLevel, _gameplayParameters.BadEntitiesToLose);
+        VisitorCountView.UpdateText(_entityCount, GameplayParameters.EntitiesPerLevel);
+        EntitiesModelController.GetPossibleEntities(GameplayParameters.EntitiesPerLevel, GameplayParameters.BadEntitiesToLose);
 
-        await _dialogView.HideDialog().ContinueWith(() =>
+        await DialogView.HideDialog().ContinueWith(() =>
         {
-            _hintController.SetHintModel(_entitiesModelController.BadEntities);
+            HintController.SetHintModel(EntitiesModelController.BadEntities);
             CallNextEntity();
         });
     }
@@ -33,7 +74,7 @@ public class GameplayStateController : MonoBehaviour
     void DetermineWhatNext()
     {
         _entityCount++;
-        if (_entityCount >= _gameplayParameters.EntitiesPerLevel)
+        if (_entityCount >= GameplayParameters.EntitiesPerLevel)
         {
             DetermineWinOrLose();
         }
@@ -45,28 +86,28 @@ public class GameplayStateController : MonoBehaviour
 
     public void DetermineWinOrLose()
     {
-        _entitiesModelController.ProcessEntity();
-        EndingController.BadEntitesAmount = _entitiesModelController.BadEntitiesInside;
-        _routingService.LoadEndingScene();
+        EntitiesModelController.ProcessEntity();
+        EndingController.BadEntitesAmount = EntitiesModelController.BadEntitiesInside;
+        RoutingService.LoadEndingScene();
     }
 
     public void CallNextEntity()
     {
-        _visitorCountView.UpdateText(_entityCount, _gameplayParameters.EntitiesPerLevel);
-        _currentEntitySubject = _entitySubjectController.SpawnEntity(_entitiesModelController.PossibleEntities[_entityCount],
+        VisitorCountView.UpdateText(_entityCount, GameplayParameters.EntitiesPerLevel);
+        _currentEntitySubject = EntitySubjectController.SpawnEntity(EntitiesModelController.PossibleEntities[_entityCount],
             async () =>
         {
-            await _dialogView.ShowDialog().ContinueWith(() =>
+            await DialogView.ShowDialog().ContinueWith(() =>
              {
-                 _dialogView.UpdateDialogText(_currentEntitySubject.EntityModelSO.VoiceDescription);
+                 DialogView.UpdateDialogText(_currentEntitySubject.EntityModelSO.VoiceDescription);
              });
         });
     }
 
     public async void AllowEntityIn()
     {
-        _entitiesModelController.AddEntity(_currentEntitySubject.EntityModelSO);
-        await _dialogView.HideDialog().ContinueWith(async () =>
+        EntitiesModelController.AddEntity(_currentEntitySubject.EntityModelSO);
+        await DialogView.HideDialog().ContinueWith(async () =>
         {
             await _currentEntitySubject.OnIn(() =>
             {
@@ -77,11 +118,11 @@ public class GameplayStateController : MonoBehaviour
 
     public async void LeaveEntityOut()
     {
-        if (!_entitiesModelController.IsBadEntity(_currentEntitySubject.EntityModelSO))
+        if (!EntitiesModelController.IsBadEntity(_currentEntitySubject.EntityModelSO))
         {
             EndingController.GoodEntityLeft = true;
         } 
-        await _dialogView.HideDialog().ContinueWith(async () =>
+        await DialogView.HideDialog().ContinueWith(async () =>
         {
             await _currentEntitySubject.OnLeave(() =>
             {

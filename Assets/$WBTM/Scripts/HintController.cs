@@ -3,17 +3,16 @@ using UnityEngine;
 
 public class HintController : MonoBehaviour
 {
-    [SerializeField]
-    private HintModelSO _hintModelSO;
+    private HintModel _hintModelSO = new();
 
     private HintView _hintView => Ctx.Resolve<HintView>();
-    public HintModelSO HintModelSO { get => _hintModelSO; set => _hintModelSO = value; }
+    public HintModel HintModelSO { get => _hintModelSO; set => _hintModelSO = value; }
 
-    public void SetHintModel(List<EntityModelSO> badEntities)
+    public void SetHintModel(List<EntityModel> badEntities)
     {
         if (badEntities == null) return;
         string description = string.Empty;
-        _hintModelSO.Hints.Clear(); 
+        _hintModelSO.Hints.Clear();
         foreach (var entity in badEntities)
         {
             description += "\n" + entity.HeadDescription.Description + " ";

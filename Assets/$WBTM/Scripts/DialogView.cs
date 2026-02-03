@@ -14,23 +14,31 @@ public class DialogView : MonoBehaviour
     private MoveSubject _moveSubject;
     private Vector3 _originalPos;
     private Vector3 _hidePos;
+    private RectTransform _rectTransform;
+
+    private MoveSubject MoveSubject {
+        get {
+            if (_moveSubject == null) _moveSubject = GetComponent<MoveSubject>();
+            return _moveSubject;
+        }
+    }
 
     private void Awake()
     {
-        _moveSubject = GetComponent<MoveSubject>();
-        _originalPos = transform.position;
+        _rectTransform = GetComponent<RectTransform>();
+        _originalPos = _rectTransform.anchoredPosition3D;
         _hidePos = _originalPos + Vector3.up * 1000;
     }
 
     public async UniTask ShowDialog()
     {
-        await _moveSubject.MoveTo(_originalPos);
+        await MoveSubject.MoveTo(_rectTransform, _originalPos); 
     }
 
     public async UniTask HideDialog()
     {
         _dialogText.text = "";
-        await _moveSubject.MoveTo(_hidePos);
+        await MoveSubject.MoveTo(_rectTransform, _hidePos);
     }
 
     public void UpdateDialogText(VerbalDescriptionModelSO descriptionModel)

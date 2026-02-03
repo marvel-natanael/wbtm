@@ -11,12 +11,12 @@ public class HintView : MonoBehaviour
     private TextMeshProUGUI _contentText;
     [SerializeField]
     private string _header;
-    private HintModelSO _hintModel;
+    private HintModel _hintModel;
 
     private int _selectedIndex = 0;
 
     public static bool Active;
-    public HintModelSO HintModel { get => _hintModel; set { _hintModel = value; _selectedIndex = 0; } }
+    public HintModel HintModel { get => _hintModel; set { _hintModel = value; _selectedIndex = 0; } }
 
 
     private void Awake()

@@ -11,13 +11,13 @@ public class EntitySubject : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _clothImage;
 
-    private EntityModelSO _entityModelSO;
+    private EntityModel _entityModelSO;
     private MoveSubject _moveSubject;
     private WiggleSubject _wiggleSubject;
 
-    public EntityModelSO EntityModelSO
+    public EntityModel EntityModelSO
     {
-        get => _entityModelSO;  
+        get => _entityModelSO;
     }
 
     private void Awake()
@@ -26,11 +26,11 @@ public class EntitySubject : MonoBehaviour
         _wiggleSubject = GetComponent<WiggleSubject>();
     }
 
-    public async UniTask OnSpawn(EntityModelSO entityModelSO, Transform destination, Action onFinish)
+    public async UniTask OnSpawn(EntityModel entityModel, Transform destination, Action onFinish)
     {
-        _entityModelSO = entityModelSO;
-        _headImage.sprite = entityModelSO.HeadDescription.VisualContent;
-        _clothImage.sprite = entityModelSO.ClothDescription.VisualContent;
+        _entityModelSO = entityModel;
+        _headImage.sprite = entityModel.HeadDescription.VisualContent;
+        _clothImage.sprite = entityModel.ClothDescription.VisualContent;
 
         _wiggleSubject.SetWiggle(true);
         await _moveSubject.MoveTo(destination).ContinueWith(() =>

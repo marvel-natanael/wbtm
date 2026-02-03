@@ -4,59 +4,64 @@ using UnityEngine;
 
 public class EntityModelController : MonoBehaviour
 {
-    private EntityModelCollection _entityModelCollection => Ctx.Resolve<EntityModelCollection>();
-    private List<EntityModelSO> entities = new List<EntityModelSO>();
+    private EntityModelCollection _entityModelCollection;
+    private List<EntityModel> _entities = new List<EntityModel>();
+
+    private EntityModelCollection EntityModelCollection {
+        get {
+            if (_entityModelCollection == null) _entityModelCollection = Ctx.Resolve<EntityModelCollection>();
+            return _entityModelCollection;
+        }
+    }
 
     public int BadEntitiesInside { get; private set; }
-    public List<EntityModelSO> PossibleEntities { get; private set; } = new List<EntityModelSO>();
-    public List<EntityModelSO> BadEntities { get; private set; } = new List<EntityModelSO>();
+    public List<EntityModel> PossibleEntities { get; private set; } = new List<EntityModel>();
+    public List<EntityModel> BadEntities { get; private set; } = new List<EntityModel>();
 
-    public List<EntityModelSO> GetPossibleEntities(int maxAmount, int badAmount)
+    public List<EntityModel> GetPossibleEntities(int maxAmount, int badAmount)
     {
         if (maxAmount <= 0)
         {
-            return new List<EntityModelSO>();
+            return new List<EntityModel>();
         }
 
-        var heads = _entityModelCollection.HeadCollection;
-        var cloths = _entityModelCollection.ClothCollection;
-        var voices = _entityModelCollection.DialogCollection;
+        var heads = EntityModelCollection.HeadCollection;
+        var cloths = EntityModelCollection.ClothCollection;
+        var voices = EntityModelCollection.DialogCollection;
 
         var combinations = from h in heads
                            from c in cloths
                            from v in voices
-                           select new EntityModelSO
+                           select new EntityModel
                            {
                                HeadDescription = h,
                                ClothDescription = c,
                                VoiceDescription = v,
                            };
 
-        var list = combinations.ToList();
-        // Shuffle the list to get random order
+        var list = combinations.ToList(); 
         list = list.OrderBy(x => Random.value).ToList();
         PossibleEntities = list.Take(maxAmount).ToList();
-
-        // Get random entities as much as badAmount and add to BadEntities
+         
         var shuffledPossible = PossibleEntities.OrderBy(x => Random.value).ToList();
         BadEntities = shuffledPossible.Take(Mathf.Min(badAmount, PossibleEntities.Count)).ToList();
 
         return PossibleEntities;
     }
 
-    public void AddEntity(EntityModelSO entity)
+    public void AddEntity(EntityModel entity)
     {
-        entities.Add(entity); 
+        _entities.Add(entity);
     }
 
 
-    public bool IsBadEntity(EntityModelSO entity)
+    public bool IsBadEntity(EntityModel entity)
     {
         return BadEntities.Contains(entity);
     }
 
     public void ProcessEntity()
     {
-        BadEntitiesInside = entities.Count(e => BadEntities.Any(b => b.HeadDescription == e.HeadDescription && b.ClothDescription == e.ClothDescription && b.VoiceDescription == e.VoiceDescription));
+        BadEntitiesInside = _entities.Count(e => BadEntities.Contains(e));
     }
 }

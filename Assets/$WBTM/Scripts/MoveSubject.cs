@@ -45,4 +45,11 @@ public class MoveSubject : MonoBehaviour
     {
         await Tween.Position(transform, destination.position, _duration);
     }
+
+    public async UniTask MoveTo(RectTransform rectTransform, Vector3 destination)
+    {
+        if (rectTransform == null) return;
+        Vector3 startPos = rectTransform.anchoredPosition3D;
+        await Tween.UIAnchoredPosition3D(rectTransform, destination, _duration);
+    }
 }
